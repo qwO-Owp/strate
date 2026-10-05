@@ -1,0 +1,11 @@
+# Strate: whitelist. Ignore everything, allow only what is public.
+/*
+!/.gitignore
+!/README.md
+!/CHANGELOG.md
+!/system/
+# LICENSE joins the whitelist at 1.0 (D2).
+
+# Second barrier inside the allowed tree.
+*.pdf
+*.odt
