@@ -1,14 +1,15 @@
 <!--
 Strate template — concept course (P6, Professeur).
 Copy below the line into `courses/<concept>.md` (kebab-case English).
-Keep it under about 30 KB: split a concept that grows beyond. Delete
+About 30 KB is the guide per composition turn, not per file (P6 §2). Delete
 this comment and every <placeholder>. Templates carry no seal.
 
 Rules: every claim typed [standard] [implementation] [UB] [42 rule]
 [advice]; every fact anchored; every code block marked `tested
 (<compiler>, <date>)` only if it really ran in this conversation,
 otherwise `not tested`. No example, twin or check-yourself answer
-implements a function a graded project not yet validated must turn in.
+reproduces a file (a function, a Makefile, a header) a graded project
+not yet validated must turn in.
 -->
 ---
 
@@ -52,7 +53,8 @@ Output:
 ## 5. Twins
 
 <the same mechanism on another task, small enough for Python Tutor
-(pythontutor.com, C mode). What to watch while stepping.>
+(pythontutor.com, C mode), or a terminal lab when the concept lives
+between files or tools. What to watch while stepping or running.>
 
 ## 6. Traps
 

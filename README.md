@@ -12,7 +12,8 @@ changes to the system itself, each one a diff with a reason.
 
 ## What is in this repository
 
-- `system/core.md`: the core instructions (the Project's instruction field).
+- `system/core.md`: the core instructions as published: the Project's
+  instruction field, with its personal section reduced to a first name.
 - `system/architecture.md`: how Strate is built, and why.
 - `system/roles/`: one document per role.
 - `system/protocols/`: P1–P9, how roles chain, report and hand over.
@@ -30,6 +31,7 @@ graded work, and it follows each subject's own rules on AI use.
 
 ## Status
 
-- Version 1.0-rc, in service since 2026-10-02. See `CHANGELOG.md`.
-- Not affiliated with 42 or 42 Madrid.
+- Version 1.0-rc.2 (2026-10-06); 1.0-rc in service since 2026-10-02.
+  See `CHANGELOG.md`.
+- Not affiliated with 42.
 - License: none yet. MIT is planned at 1.0; until then, all rights reserved.

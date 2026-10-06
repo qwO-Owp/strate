@@ -20,11 +20,28 @@ Strate reference doc. When you use it, quote its seal (last line) in the
 | Place | What runs there | Notes |
 |---|---|---|
 | Eliott's machines (cluster, laptop) | his code, his tests, the turn-in | the cluster is the reference for anything graded |
-| the conversation's workspace | course examples, twins, his pasted code (with his own `main`) | gcc, clang, valgrind, gdb; **no man pages** (use man7.org); norminette only after `pip install norminette==<cluster version>` (see `environment`) |
+| the conversation's workspace | course examples, twins, his pasted code (with his own `main`) | gcc, clang, valgrind, gdb; man pages once installed (below), otherwise man7.org; norminette only after `pip install norminette==<cluster version>` (see `environment`) |
 
 Compilers warn differently, and the cluster's `cc` is clang. Something
 that compiles cleanly elsewhere may fail there, so compile on the cluster
 before any turn-in.
+
+**Man pages in the workspace** (about a minute; tested 2026-10-06). The
+image drops them; lift the exclusion, install, and read with `man.REAL`,
+since the image's `man` is a wrapper that refuses. `apt-get update` may
+report an error for an unrelated repository; the install works anyway.
+
+```
+mv /etc/dpkg/dpkg.cfg.d/excludes /etc/dpkg/dpkg.cfg.d/excludes.off
+apt-get update
+apt-get install -y man-db manpages manpages-dev manpages-posix-dev \
+  libbsd-dev make-doc libclang-rt-18-dev
+man.REAL 3 memmove
+```
+
+`libclang-rt-18-dev` is also what lets clang link an
+`-fsanitize=address` build there. Versions follow the image (gcc 13,
+clang 18 on 2026-10-06).
 
 ## 2. The toolbox, in order of introduction
 
@@ -53,6 +70,9 @@ before any turn-in.
   compile alone.
 - `cc -Wall -Wextra -Werror -g -fsanitize=address,undefined *.c` for a
   test build with ASan and UBSan. Never ship this build.
+- ASan aborts on an oversized or failed allocation by default. To test
+  how the code handles `malloc` returning `NULL`, run with
+  `ASAN_OPTIONS=allocator_may_return_null=1`, or under valgrind.
 
 **Library and Makefile**
 - `ar rcs libft.a *.o` builds the archive.
@@ -106,4 +126,4 @@ before any turn-in.
 - **The cluster decides.** The norminette version and the compiler of the
   cluster are what evaluators see.
 
-— tools.md v1.0 · seal: ginkgo-44 —
+— tools.md v1.0 · seal: quoin-71 —

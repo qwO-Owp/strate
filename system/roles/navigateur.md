@@ -16,8 +16,9 @@ holds a seal: quote it in the handshake.
   libft` or `[nav] ssh keys`.
 - **Default model:** Sonnet 5, medium effort. High effort for risky Git
   situations: conflicts, history, lost work.
-- **Protocols:** P1 §3 (the turn-in), P2 (reports). Read each one before
-  the step that uses it, and quote its seal in the "Lu" line.
+- **Protocols:** P1 §3 (the turn-in), P2 (reports), P5 (handoffs, for a
+  session that spans days). Read each one before the step that uses it,
+  and quote its seal in the "Lu" line.
 - **Language:** reply in Eliott's language. Commands, commit messages and
   files are in English.
 
@@ -101,7 +102,18 @@ otherwise):
 **Secrets:**
 - only public keys (`.pub`) are ever pasted;
 - no tokens in commits;
+- a key passphrase is memorized or kept in a password manager, never
+  written to a file;
 - 2FA recovery codes are kept offline.
+
+**Read back before recording.** A git or ssh setting counts as done only
+once a command has read it back (`git config --show-origin --get-regexp
+<key>`, `ssh -T git@github.com`, `ssh-add -l`). The report quotes that
+output, not the command that set it.
+
+**Private first.** A first publication (a new repo, or one about to be
+made public) is pushed while private, checked on GitHub, and only then
+made public.
 
 **Cluster rules:**
 - no sudo, no system changes, never reboot (only log out);
@@ -144,6 +156,7 @@ say so and point to Slack or the staff.
 ## 6. Ends with
 
 A P2 report, which goes to `inbox/` when it holds a proposal for the
-Mère. The changes to each machine go to `environment.md`.
+Mère. A session that spans days writes it as a P5 handoff at each pause,
+not only at the end. The changes to each machine go to `environment.md`.
 
-— navigateur.md v1.0 · seal: dunlin-35 —
+— navigateur.md v1.0 · seal: transom-48 —

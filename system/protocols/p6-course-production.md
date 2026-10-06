@@ -11,8 +11,8 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 > - They are delivered as a private page plus a downloaded HTML file. The
 >   markdown source lives in Project Knowledge.
 >
-> No example or twin implements a function that a graded project not yet
-> validated must turn in. An atlas stays at N1, and an atlas is never
+> No example or twin reproduces a file (a function, a Makefile, a
+> header) that a graded project not yet validated must turn in. An atlas stays at N1, and an atlas is never
 > shared (Article 9).
 
 - **Used by:** the Professeur (to produce), the Examinateur (to review).
@@ -38,7 +38,10 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 - atlases: `projects/<p>/atlas.md` (general), then `atlas-<part>.md`, for
   example `atlas-p1.md` or `atlas-bonus.md`.
 
-Keep a source under about 30 KB: split a concept that grows beyond.
+**Size.** About 30 KB is the guide for one composition turn (§1, step 2),
+not for a file: one file per concept, and one per part atlas, wins over
+the size. The review notes a source's size; splitting a large one waits
+for the consolidation pass (N12).
 
 **Every source starts with:**
 
@@ -82,6 +85,12 @@ Keep a source under about 30 KB: split a concept that grows beyond.
 - **test ideas, as inputs to try;**
 - an evaluator question.
 
+**Both atlas files** end with **Notes for the review (author)**, before
+the Review block: the anchors opened in the session and those cited from
+knowledge; what was run, with the machine, the versions and the date;
+the reference results the atlas asks Eliott to derive himself, kept out
+of his reading path; the integrity points the reviewer should check.
+
 ## 3. The three locks and claim typing
 
 - **Run.**
@@ -97,8 +106,10 @@ Keep a source under about 30 KB: split a concept that grows beyond.
   - The standard as C11 (the N1570 draft), for example "N1570 §7.24.2.2".
   - Also the Norm, the subject, 42 documents.
 - **Review:** by the Examinateur only (§1, step 5).
-  - The reviewer opens every anchor for real: the workspace `man` when
-    installed, otherwise the web (man7.org, open-std.org for N1570).
+  - The reviewer opens every anchor for real: `man` in the workspace
+    (installed per `tools.md` §1), otherwise man7.org; N1570 from the
+    Project's `n1570.pdf`, whose `project_read` writes its full text to
+    the workspace (the web copies stop early or refuse).
   - An anchor it could not open is marked `anchor unchecked`. That
     blocks `approved`.
 - **Claim types,** put in brackets after the claim: `[standard]`,
@@ -114,11 +125,21 @@ Keep a source under about 30 KB: split a concept that grows beyond.
 - **Twins.**
   - A twin is the same mechanism on another task and other data, small
     enough for Python Tutor (pythontutor.com, C mode).
-  - If renaming or retyping it gives a deliverable function, it is not a
-    twin.
+  - When the concept lives between files or tools (compiler stages, `.o`
+    files, archives, links, `make`), the twin is a **terminal lab**: a few
+    files and the commands to run on them, with their real output.
+  - If renaming or retyping it gives a deliverable file, it is not a twin.
 - **Integrity:**
-  - no example, twin or check-yourself answer implements a function a
-    graded project not yet validated must turn in;
+  - no example, twin or check-yourself answer reproduces a file a graded
+    project not yet validated must turn in: a function, and equally its
+    Makefile or its header;
+  - a twin of such a file has another shape (another graph, other kinds
+    of files, another job), not the same file under other names, and no
+    combination of a course's examples, its twins and the courses it
+    stands on adds up to the deliverable. The review checks the
+    combination;
+  - when Eliott's own validated work already holds such a file (a
+    Reloaded Makefile), the atlas sends him there;
   - no pseudocode of the deliverable;
   - an atlas never goes beyond N1.
 
@@ -133,6 +154,14 @@ source's "Page" line.
   conversation, read the page first.
 - The **final page is rendered from the approved source.** An earlier
   page carries a visible DRAFT banner.
+- **The render check** comes before the "Page" line is filled, and its
+  result is reported to Eliott:
+  1. the local file: its text, drawings and controls aside, equals the
+     source as rendered by an independent markdown parser; code blocks
+     are byte-identical; each drawing's words equal its sketch's;
+  2. the page as served, read back after publishing;
+  3. the live page, in a browser, when the session has one; otherwise
+     the report says "not checked live".
 - **An atlas is never shared.** A course stays private unless Eliott
   decides otherwise.
 - The "Page" line is metadata: updating it after approval needs no new
@@ -144,4 +173,4 @@ the cluster for now, the KB's `outputs/` later.
 **Storage.** Only the markdown source goes into Project Knowledge. The
 HTML never does.
 
-— p6-course-production.md v1.0 · seal: gimlet-45 —
+— p6-course-production.md v1.0 · seal: gusset-30 —

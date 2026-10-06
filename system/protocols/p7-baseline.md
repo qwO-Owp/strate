@@ -6,8 +6,8 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 > **Essentials.** `living/baseline.md` says, domain by domain, what Eliott
 > already masters, what is shaky and what is at zero. Every role reads it
 > before explaining anything, so nothing is re-explained that is solid
-> and nothing is skipped that is missing. It is checked by a 20-minute
-> diagnostic, and updated at every project close. It is private.
+> and nothing is skipped that is missing. It is checked by a diagnostic
+> of about 20 minutes, and updated at every project close. It is private.
 
 - **Used by:**
   - every role (to read it);
@@ -57,13 +57,18 @@ marked *provisional* until the diagnostic.
   when the baseline is stale:
   - older than two projects;
   - or Eliott finds the explanations miscalibrated.
-- **Timing:** about 20 minutes, plus a short debrief.
+- **Timing:** about 20 minutes in all, plus a short debrief. It may run
+  as targeted blocks, at different moments, as long as together they
+  cover every domain of §1.
 
 **How:**
-1. **One question per domain,** about three minutes: "explain or
-   predict" ("what does this print, and why?") or "spot the problem"
-   ("what is wrong in these four lines?"). Add one follow-up only where
-   the answer looks shaky.
+1. **Questions where the uncertainty is,** about three minutes each:
+   first what the record declares solid, then the rest. At least one per
+   domain, several where the record and the evidence disagree, one at
+   most where the record already says zero. "Explain or predict" ("what
+   does this print, and why?") or "spot the problem" ("what is wrong in
+   these four lines?"). Add one follow-up only where the answer looks
+   shaky.
 2. **Answers in the chat,** in Eliott's own words. No help and no hints
    during the diagnostic.
 3. **Scoring per domain:**
@@ -75,8 +80,9 @@ marked *provisional* until the diagnostic.
 5. **Output:** the proposed `baseline.md`, with the sources dated,
    written with Eliott's OK.
 
-The questions and corrections test mechanisms. None of them implements a
-function that a graded project not yet validated must turn in.
+The questions and corrections test mechanisms. None of them reproduces a
+file (a function, a Makefile, a header) that a graded project not yet
+validated must turn in.
 
 ## 4. Updating
 
@@ -88,4 +94,4 @@ function that a graded project not yet validated must turn in.
 - Only the writers in architecture §8 edit the baseline: the Examinateur
   (diagnostic) and the Éclaireur (close), with OK.
 
-— p7-baseline.md v1.0 · seal: spandrel-36 —
+— p7-baseline.md v1.0 · seal: ashlar-56 —

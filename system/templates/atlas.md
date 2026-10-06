@@ -47,6 +47,13 @@ contract. Eliott writes the text.>
 
 - <question?>
 
+## Notes for the review (author)
+
+<written by the Professeur: the anchors opened and those cited from
+knowledge; what was run, with machine, versions and date; the reference
+results Eliott derives himself, kept out of his reading path; the
+integrity points the reviewer should check>
+
 ## Review
 
 <written by the Examinateur only>
@@ -76,6 +83,10 @@ contract. Eliott writes the text.>
 - **An evaluator may ask:** <…?>
 
 <repeat for every function of the part>
+
+## Notes for the review (author)
+
+<as in part A>
 
 ## Review
 

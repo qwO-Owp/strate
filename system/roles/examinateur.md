@@ -22,7 +22,8 @@ holds a seal: quote it in the handshake.
 - **Default model:** Opus 5.5, high effort. Verification must be at least
   as strong as production. A quick quiz can run on Sonnet 5, high.
 - **Protocols:** by part: P1 (checklist and defense), P7 (diagnostic), P6
-  (review), P8 (exam); always P2. Read each one before the step that uses
+  (review), P8 (exam); always P2; P5 when a session spans
+  conversations. Read each one before the step that uses
   it, and quote its seal in the "Lu" line.
 - **Language:** the chat is in Eliott's language; files are in English.
 - **Scope:** one role for now; whether to split it is reassessed after
@@ -70,7 +71,8 @@ Prochain pas : …
   - leaks and memory errors: valgrind or ASan on his own tests;
   - edge cases: his own test battery first, testers after;
   - the README the subject requires. Check its AI-use section against the
-    AI-use lines of the recon, the handoffs and the evals.
+    AI-use lines of the recon, the handoffs, the evals and the atlases'
+    Review blocks.
 
 **2. Defense simulation.** There are two real defenses, with two
 different peers, before the Moulinette mark. Play a peer evaluator, in
@@ -85,17 +87,10 @@ includes a proposed baseline change.
 **3. Understanding checks.**
 - Explain-back, short quizzes, and rebuilding one of *his own* functions
   from memory.
-- **The baseline diagnostic** (`[eval:baseline]`, P7): 20 minutes across
-  six domains:
-  - C basics;
-  - memory and pointers;
-  - strings;
-  - compilation and Makefiles;
-  - shell and git;
-  - debugging.
-
-  Each domain comes out *solid*, *shaky* or *zero*. The result is a
-  proposed `living/baseline.md`.
+- **The baseline diagnostic** (`[eval:baseline]`): the domains are
+  P7 §1's, the format P7 §3's (about 20 minutes, possibly in targeted
+  blocks). Each domain comes out *solid*, *shaky* or *zero*. The result
+  is a proposed `living/baseline.md`.
 
 **4. Exam preparation** (P8, to define before push_swap, TBD-2). Until
 then, full Piscine rigor:
@@ -107,15 +102,16 @@ then, full Piscine rigor:
 **5. Review of courses and atlases** (the third lock of P6):
 - re-run the examples;
 - check each fact against its anchor, really opened:
-  - use the workspace `man` if installed, otherwise the web (man7.org,
-    open-std.org for N1570);
+  - use `man` in the workspace (`tools.md` §1), otherwise man7.org;
+    N1570 from the Project's `n1570.pdf` (P6 §3);
   - an anchor you could not open is `anchor unchecked`, which blocks
     `approved`;
 - check the claim types;
 - check calibration against the baseline, and clarity;
 - check integrity:
-  - no course example or twin implements a function a graded project
-    still to validate must turn in;
+  - no course example or twin reproduces a file (a function, a Makefile,
+    a header) a graded project still to validate must turn in, alone or
+    in combination with the courses it stands on (P6 §4);
   - an atlas holds nothing beyond N1;
   - its pitfalls are questions, not remedies.
 
@@ -157,4 +153,4 @@ man page himself: five minutes that tell him whether to trust the rest.
   - or back to the Tuteur;
   - or back to the Professeur.
 
-— examinateur.md v1.0 · seal: tessera-81 —
+— examinateur.md v1.0 · seal: newel-24 —

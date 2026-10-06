@@ -6,10 +6,10 @@ implement this document. When they disagree with it, this document wins
 until the Mother changes it.
 
 - **Status:** v1.0, C1 approved by Eliott on 2026-09-30; amended in C2a
-  (pre-release) after an independent review of the role docs, and in C3c
-  (2026-10-02) once the core went live. It freezes the structure. C2
-  writes the detailed roles, protocols and templates; C3 composes the core
-  instructions.
+  (pre-release) after an independent review of the role docs, in C3c
+  (2026-10-02) once the core went live, and in E (2026-10-06) after the
+  first public commit. It freezes the structure. C2 writes the detailed
+  roles, protocols and templates; C3 composes the core instructions.
 - **Sources:** decisions_log (sessions 1–3), open_questions (B5), Eliott's
   answers to the C1 questions (2026-09-29/30), the KB's own architecture
   (`KB_ARCHITECTURE.md`, `SETUP-PROJET.md`, `GABARITS.md`).
@@ -307,7 +307,8 @@ Anything with no reader stays in the chat.
   files at close.
 
 This settles N8: the AI-use lines live in the project files (the recon
-has one for the pipeline; each handoff and each eval has its own). The
+has one for the pipeline; each handoff, each eval and each atlas's Review
+block has its own). The
 Tuteur's last step gathers them and asks about any `[learn]` use, so that
 Eliott writes the README's AI-use section **before** the turn-in.
 
@@ -376,11 +377,12 @@ The next conversation starts from it.
    at the end of the source.
 7. **Integrity:**
    - no example, twin, check-yourself answer or diagnostic correction
-     implements a function that a graded project not yet validated must
-     turn in;
+     reproduces a file that a graded project not yet validated must turn
+     in: a function, its Makefile or its header;
    - an atlas stays at N1, its pitfalls written as questions.
 8. **Delivery:**
-   - the final HTML is rendered from the approved source; an early render
+   - the final HTML is rendered from the approved source and checked
+     against it before its link is recorded (P6 §5); an early render
      carries a visible DRAFT banner;
    - the HTML is downloaded and archived by Eliott (later in the KB
      `outputs/`); the markdown source stays in the Project Knowledge.
@@ -390,8 +392,9 @@ The next conversation starts from it.
 - `living/baseline.md` is the declaration of level per domain, modelled on
   the KB's `_baseline` template: already solid / shaky / zero / preferred
   depth.
-- It is built from the Piscine record, then **checked by a 20-minute
-  diagnostic** (`[eval:baseline]`) at the start of Libft.
+- It is built from the Piscine record, then **checked by a diagnostic**
+  (`[eval:baseline]`, about 20 minutes, possibly in targeted blocks) at
+  the start of Libft.
 - It is updated at every project close. Every role reads it before
   explaining.
 
@@ -406,9 +409,9 @@ Known: unlimited attempts; 100% is needed to move to the next milestone.
   Mother, as a diff with a reason.
 - Eliott's OK, then an entry in `decisions_log`.
 - **Numbering:** 0.x bootstrap; **1.0-rc from the first paste of the
-  core** (2026-10-02); 1.0 once the C5 fixes are in, committed in phase D;
-  minor versions (1.1, 1.2) for calibrations; a major version for a new
-  layer, seam or core rule.
+  core** (2026-10-02); `1.0-rc.N` for fixes released before 1.0; 1.0 once
+  the C5 fixes are in, committed in D2; minor versions (1.1, 1.2) for
+  calibrations; a major version for a new layer, seam or core rule.
 
 ## 7. Pedagogy: how learning is organised
 
@@ -439,7 +442,8 @@ Known: unlimited attempts; 100% is needed to move to the next milestone.
 - **Twins and Python Tutor.** A twin is the same mechanism with another task
   and other data, never the solution with renamed variables: if renaming
   or retyping it gives the deliverable, it is not a twin. It is stepped
-  through in Python Tutor. The Professeur uses twins in courses; the Tuteur
+  through in Python Tutor, or run as a terminal lab when the concept lives
+  between files or tools (compiler stages, archives, `make`). The Professeur uses twins in courses; the Tuteur
   uses them when Eliott is stuck. Python Tutor is also for stepping through
   Eliott's *own* function to see his bug.
 - **The toolbox** (`system/tools.md`), introduced progressively:
@@ -467,13 +471,14 @@ Known: unlimited attempts; 100% is needed to move to the next milestone.
 | `living/decisions_log.md` | the changelog, from C3c onward | Mère | **private** (it records marks, Pace and dates); the repo's `CHANGELOG.md` is the public history |
 | `living/decisions_log-bootstrap.md` *(frozen 2026-10-02)* | the bootstrap record, phases A to C3b | **nobody: frozen, never written to again** (N13) | **private** |
 | `living/environment.md` | machines, accounts, setup | Navigateur, with OK | **private** |
-| `living/friction_log.md` *(at first friction)* | frictions and their fixes | Navigateur | private |
-| `living/univers42_log.md` *(at first contribution)* | explorations, PRs, ideas | Bâtisseur | decided at creation |
+| `living/friction_log.md` *(since 2026-10-05)* | frictions and their fixes | Navigateur | private |
+| `living/univers42_log.md` *(created at Discord V1.1)* | Eliott's own verified contributions, one dated line each | Bâtisseur, with OK | **private** (N3) |
 | `living/cursus_map.md` | the holy graph, both tracks | Mère / Éclaireur | **private** (intranet-derived) |
 | `living/thread_map.md` | the threads and their layers | Éclaireur | **private** (subject-derived) |
 | `living/univers42_map.md` | the org, public data | Éclaireur | **private until N5 is settled** (see open_questions) |
 | `living/kb_candidates.md` *(new, at first close)* | KB residue kept from closed projects | Éclaireur only (close) | private |
 | `living/mother_handoff.md` *(new, when needed)* | the Mother's handoff | Mère only | private |
+| `living/roadmap.md` *(since 2026-10-05)* | the route to the current project's close: stages, their exits, target dates | Mère only | **private** |
 | `courses/<concept>.md` | concept course sources | Professeur → Examinateur | private by default; generic C knowledge could go public later |
 | `projects/<project>/recon.md`, `atlas*.md`, `handoff-<step>.md`, `eval-<n>.md` | project work; the rules card lives in `recon.md` | Éclaireur, Professeur, Tuteur, Examinateur | **private** (project tutorials fall under Article 9) |
 | `builds/<object>/brief.md`, `handoff-<n>.md` *(new)* | non-graded builds | Bâtisseur | **private** |
@@ -495,7 +500,7 @@ boundary that means something. Done once, for `decisions_log`, on
 2026-10-02 (N13).
 
 **Storage budget.** The Project Knowledge has a 2 MB cap (0.33 MB used at
-C1, verified). Only markdown sources live there; HTML renders do not.
+C1; 0.91 MB on 2026-10-06, `n1570.pdf` included). Only markdown sources live there; HTML renders do not.
 Handoffs and reports of finished projects are deleted at close, once the
 close step has kept what matters. A bigger Project also pushes claude.ai
 toward retrieval mode (§4.2), one more reason to stay lean.
@@ -504,12 +509,13 @@ toward retrieval mode (§4.2), one more reason to stay lean.
 
 All of it is private and never goes in the git repo:
 - the subject PDFs;
-- La Norma v4;
+- the Norm v4 (`es_norm-2.pdf`);
+- `n1570.pdf`, the C11 draft (N1570) that reviewers open (P6 §3);
 - the campus rules;
 - the peer-evaluation guide;
 - the security charter;
 - the Vogsphere manual;
-- the Madrid FAQ;
+- the campus FAQ;
 - `AI_in_42`;
 - the 42Next FAQ;
 - `project_data.json`;
@@ -530,20 +536,25 @@ All of it is private and never goes in the git repo:
   - maps and integrity locks live in `univers42_map`;
   - building work goes through the Bâtisseur (`[build:discord]`,
     `[build:site]`, contributions);
-  - the league is independent: candidates excluded, independence stated.
-- **Git repo (`strate`, public on Eliott's GitHub, license MIT):**
-  - it contains only what is marked public: the core, `system/` (roles,
-    protocols, templates, tools), a README, a CHANGELOG and the LICENSE;
+  - the league is independent: candidates excluded, independence stated;
+  - Strate never acts on a Univers42 space itself: Eliott acts, Strate
+    drafts. A bot is a V2 build at the earliest (decided 2026-10-06).
+- **Git repo (`strate`, on Eliott's GitHub, public since 2026-10-05;
+  MIT from D2):**
+  - it contains only what is marked public: the core's public projection,
+    `system/` (architecture, roles, protocols, templates, tools), a
+    README, a CHANGELOG and, from D2, the LICENSE;
   - **first lock:** private documents live only in the Project Knowledge,
     never in the git tree, so nothing can leak through a mistaken
     `git add`;
-  - **second lock:** a `.gitignore` that refuses `living/`, `inbox/`,
-    `courses/`, `projects/`, `builds/` and `*.pdf`, in case one is ever
-    copied in by mistake;
-  - the core is written to be public-safe (C3): its "who Eliott is" part
-    keeps only what he would put on a public profile. It states that he
-    is a beginner, on his explicit decision (C3a); **everything finer —
-    level per domain, the Piscine record, marks, weak spots, Pace and
+  - **second lock:** a whitelist `.gitignore`. Everything is ignored
+    except `.gitignore`, `README.md`, `CHANGELOG.md`, `system/` and, from
+    D2, `LICENSE`; `*.pdf` and `*.odt` are refused even inside `system/`;
+  - **the public projection:** the repo's core is the Project's core with
+    its "Who Eliott is" section reduced to one line, his first name. That
+    is the only difference allowed (Eliott, 2026-10-05), so everything
+    private about him lives in that section. **Everything finer — level
+    per domain, the Piscine record, marks, weak spots, Pace and
     deadlines — stays in the private `baseline.md` and
     `cursus_progress.md`.**
 - **Tools:** see §7.
@@ -577,17 +588,18 @@ builds/<object>/           brief, handoffs
 ```
 README.md                  what Strate is and why
 CHANGELOG.md               public history of versions
-LICENSE                    MIT
-.gitignore                 second lock (§10)
-instructions/core.md       the core (copy of the instruction field)
+LICENSE                    MIT (from D2)
+.gitignore                 second lock: a whitelist (§10)
+system/core.md             the core's public projection (§10)
 system/                    architecture, roles, protocols, templates, tools
 ```
 
 **One file, three places.** The **instruction field is authoritative**.
 `system/core.md` is its release copy in the Project, written in the same
 gesture as the paste — never one without the other (C3b). The repo's
-`instructions/core.md` is the same text again, committed at each release
-(P9 §3).
+`system/core.md` is its public projection (§10), committed at each
+release after a `diff` that shows one hunk, "Who Eliott is", and nothing
+else (P9 §3).
 
 `univers42_map` may join the repo later (`docs/`), once N5 is settled.
 
@@ -604,7 +616,7 @@ gesture as the paste — never one without the other (C3b). The repo's
   - no clone, fork or submodule that puts a locked reference on disk
     (hellish carries the org's libft).
 - **Courses:** the three locks, claim typing, and no example that
-  implements a deliverable function.
+  reproduces a deliverable file (a function, a Makefile, a header).
 - **Turn-in:** the Examinateur's checklist on the exact commit, and the
   defense simulation.
 - **Understanding:** "Could I reproduce it without AI, with just the man
@@ -629,7 +641,7 @@ gesture as the paste — never one without the other (C3b). The repo's
 | One conversation doing everything | one role, one mission |
 | The loop dies | reports are mandatory; inbox-age signal; weekly triage |
 | Infrastructure instead of work | the brake principle (§2.11) |
-| Leak on the public push | private docs never in the git tree |
+| Leak on the public push | private docs never in the git tree; the projection diff and the private-term check before every commit (P9 §3) |
 | Project Knowledge full | markdown sources only; handoffs pruned at close |
 | A living document too big to rewrite | freeze the closed part, restart the live one (§8) |
 | Token limits on big documents | sectioned production (P6) |
@@ -646,9 +658,14 @@ gesture as the paste — never one without the other (C3b). The repo's
   alarm.
 - **C4** is the real start on Libft: recon, diagnostic, first courses,
   atlas, with a stop at the first red flag. **Running since 2026-10-02.**
-- **C5** is the external audit (Fable 5.1 MAX, with a pre-mortem),
-  **after the first results of the Libft pipeline** (C3a), not in
-  parallel: the audit then has real experimental material.
-- **D** is the repo, the first commit and TBD-8.
+- **D1**, the public repo and its first commit, was done on 2026-10-05.
+  Then **K**, every open conversation closed with its report, and **E**,
+  the decisions of 2026-10-05 applied and the inbox emptied
+  (`1.0-rc.2`).
+- **C5**, the external audit (Fable 5.1 MAX, with a pre-mortem), is split
+  so that it audits real material: **V1**, light, after Libft's Part 1;
+  **V2**, the full audit, after Libft's close.
+- **D2** follows C5: its fixes make 1.0, with the MIT license and TBD-8.
+- The dated route lives in `living/roadmap.md`.
 
-— architecture.md v1.0 · seal: lintel-24 —
+— architecture.md v1.0 · seal: corbel-62 —

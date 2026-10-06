@@ -71,7 +71,8 @@ would give `getnextline`, which is not the project's name. Decided
 - The Tuteur may compile and run Eliott's own pasted code, with his own
   `main` and inputs, to show him what happens. The fix stays his. At
   stage 1, the Tuteur writes no test harness for him.
-- The last step gathers the AI-use lines (recon, handoffs, evals) and asks
+- The last step gathers the AI-use lines (the recon, the handoffs, the
+  evals and the Review blocks of the project's atlas files) and asks
   about any `[learn]` use. Eliott then writes the README, its AI-use
   section included, before step 4.
 
@@ -128,4 +129,4 @@ The rule for pair projects is provisional (TBD-1):
 
 It is finalised after push_swap.
 
-— p1-project-cycle.md v1.0 · seal: tenon-41 —
+— p1-project-cycle.md v1.0 · seal: dowel-93 —

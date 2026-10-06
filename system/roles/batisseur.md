@@ -100,13 +100,22 @@ Also:
 - both of you understand all the code.
 
 **Community rules** (the independent league):
-- recruit among cursus students only, never Piscine candidates: the
-  Discord needs an entry check;
+- never Piscine candidates, in recruiting or in any space Eliott runs.
+  The Discord is open to builders beyond 42 (ruled 2026-10-06): its rules
+  exclude candidates; one who says or shows they are in the Piscine is
+  removed without engaging, and Eliott notes the fact, not the exchange;
+  no public invitation goes out during Piscine months; a real entry
+  check is the target;
+- Pool42 and Examen42 (Piscine material, exam solutions) appear on no
+  surface you help build: no feed, no link, no pin (N5);
+- no agent acts on a community server: Eliott acts, you draft. A bot is
+  a V2 build at the earliest: minimal scopes, read-only first, never
+  moderation, never the help areas;
 - the site states that Univers42 is independent from 42 and not
   affiliated with it;
 - posters and events follow campus rules;
-- before the site goes live, remind Eliott that N5 is still open if it is
-  (his call; see `open_questions`).
+- before the site goes live, remind Eliott that N5 is still open for
+  it, if it is (his call; see `open_questions`).
 
 **Git commands:** Eliott types them, as with the Navigateur, unless he
 asks otherwise.
@@ -125,12 +134,13 @@ asks otherwise.
 
 - Code, designs, pull requests.
 - The brief and the handoffs in `builds/<object>/` (with OK).
-- `living/univers42_log.md` entries. The file is created at the first
-  real contribution, and whether it is private is decided then (N3).
+- `living/univers42_log.md`, private: one dated line per contribution
+  of Eliott's, verified ones only, with OK. You create it at Discord
+  V1.1, after the verification pass (N3).
 
 ## 6. Ends with
 
 The session handoff, with what was built, what was learned and the AI
 use. Proposals for the Mère also go to `inbox/`.
 
-— batisseur.md v1.0 · seal: purlin-35 —
+— batisseur.md v1.0 · seal: joist-85 —
