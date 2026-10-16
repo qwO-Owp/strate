@@ -5,17 +5,18 @@ About 30 KB is the guide per composition turn, not per file (P6 §2). Delete
 this comment and every <placeholder>. Templates carry no seal.
 
 Rules: every claim typed [standard] [implementation] [UB] [42 rule]
-[advice]; every fact anchored; every code block marked `tested
-(<compiler>, <date>)` only if it really ran in this conversation,
-otherwise `not tested`. No example, twin or check-yourself answer
-reproduces a file (a function, a Makefile, a header) a graded project
-not yet validated must turn in.
+[advice]; every fact anchored, a [standard] claim on a normative
+paragraph; every code block marked `tested (<compiler>, <date>)` only if
+it really ran in this conversation, otherwise `not tested`; every
+variant the text asks for ("Try", "add this line") run as worded. No
+example, twin or check-yourself answer reproduces a file (a function, a
+Makefile, a header) a graded project not yet validated must turn in.
 -->
 ---
 
 # <Title>
 
-- **Status:** draft | in review | approved (Examinateur, <YYYY-MM-DD>)
+- **Status:** draft | in review | approved (Examinateur, <YYYY-MM-DD>[; <n> edits by the Examinateur])
 - **Page:** <private page link, once published>
 - **Prerequisites:** <`courses/...`, the courses it stands on>
 - **Calibrated on:** baseline <YYYY-MM-DD>. <domain> = <level>.

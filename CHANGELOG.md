@@ -4,6 +4,26 @@ Versions follow Strate's own numbering (P9): 0.x bootstrap, 1.0-rc the
 first live core, 1.0 after the external audit's fixes, minor versions for
 calibrations, major versions for a new layer, seam or core rule.
 
+## [1.0-rc.3] — 2026-10-15
+
+Fixes released before 1.0.
+- Atlas v2: a part atlas becomes the bridge between the courses and each
+  function: the contract in plain words, a map from each mechanism to the
+  course that teaches it, a twin on another task walked line by line,
+  examples with folded answers, the decisions as questions, a test plan.
+  It still stops before the steps of the solution.
+- One-trip review: the Examiner corrects a course or an atlas within a
+  stated scope and settles it; anything beyond that scope goes back to
+  the Professor, who checks every correction before the page is
+  rendered.
+- Course production: every variant a course asks the reader to make is
+  run as worded; a claim about the C standard cites a normative
+  paragraph; each writing round is delivered as a file.
+- Releases: the Mother builds and checks the bundle; the student commits
+  it himself.
+- Toolbox: more man pages and the compiler manuals in the workspace; the
+  cluster's compiler approximated for claims about warnings.
+
 ## [1.0-rc.2] — 2026-10-06
 
 Fixes released before 1.0.

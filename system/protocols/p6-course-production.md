@@ -7,13 +7,15 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 > - They are produced from a plan Eliott validates, section by section.
 > - Every code example is really run, every fact anchored, every claim
 >   typed.
-> - The Examinateur reviews them before they are `approved`.
+> - The Examinateur reviews them before they are `approved`, in one
+>   trip: it corrects them within its edit scope (§3) and settles the
+>   file, or sends it back.
 > - They are delivered as a private page plus a downloaded HTML file. The
 >   markdown source lives in Project Knowledge.
 >
 > No example or twin reproduces a file (a function, a Makefile, a
-> header) that a graded project not yet validated must turn in. An atlas stays at N1, and an atlas is never
-> shared (Article 9).
+> header) that a graded project not yet validated must turn in. An atlas
+> stays below N2 (§4), and an atlas is never shared (Article 9).
 
 - **Used by:** the Professeur (to produce), the Examinateur (to review).
 
@@ -22,13 +24,20 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 1. **Plan.** Propose the outline: sections, figures, examples, twins. Also
    say what the baseline lets you skip. Eliott validates it.
 2. **Sections.** Write them over several turns, one or two at a time.
-   Never one giant output: token limits cut depth.
+   Never one giant output: token limits cut depth. Each round goes to
+   Eliott as a file, not printed in the chat, and is written to the
+   Project from that file after his go.
 3. **Run and anchor** as you go (§3).
 4. **Assemble** the markdown source, with status `draft`, and write it
    with OK.
-5. **Review** (P1 step 2r). Set the status to `in review`. The Examinateur
-   returns `approved`, or a Review block with numbered findings.
-6. **Render and deliver** (§5).
+5. **Review** (P1 step 2r), in one trip. Set the status to `in review`.
+   The Examinateur reviews the whole source, corrects it within its edit
+   scope (§3), and writes it as `approved`, its edits listed in the
+   Review block. When a fix lies outside that scope, the verdict is
+   `changes needed`: the source goes back to the Professeur with a Review
+   block of numbered findings.
+6. **Render and deliver** (§5), in a new Professeur conversation that
+   first checks the Examinateur's edits.
 
 ## 2. Files and structure
 
@@ -47,7 +56,7 @@ for the consolidation pass (N12).
 
 ```
 # <Title>
-- Status: draft | in review | approved (Examinateur, <YYYY-MM-DD>)
+- Status: draft | in review | approved (Examinateur, <YYYY-MM-DD>[; <n> edits by the Examinateur])
 - Page: <private page link, once published>
 - Prerequisites: <courses/... it stands on>
 - Calibrated on: baseline <YYYY-MM-DD> · <domain> = <level>
@@ -77,19 +86,37 @@ for the consolidation pass (N12).
 - the README plan: the sections the subject requires;
 - the evaluator's likely questions.
 
-**A part atlas,** for each function or exercise:
-- the **N1 contract:** prototype, parameters, return value, edge cases,
-  man reference, allowed functions;
-- what is new in it;
-- **pitfalls, as questions;**
-- **test ideas, as inputs to try;**
-- an evaluator question.
+**A part atlas** (atlas v2, from 1.0-rc.3; `system/templates/atlas.md`,
+Part B). It is the bridge between the courses and each function:
+- **for each step:**
+  - what its functions share, and what is new;
+  - a **mechanism map:** each mechanism, the course section that teaches
+    it, and where it shows up in this step;
+  - a **twin** for each new mechanism, given in full and walked line by
+    line, unless a course already shows it as this step uses it;
+- **for each function or exercise:**
+  - the contract **in plain words**, with a figure when it helps;
+  - the **N1 contract:** prototype, parameters, return value, edge cases,
+    man reference, allowed functions;
+  - **examples:** inputs and expected outputs, some left to derive, their
+    answers in a fold;
+  - the **decisions** Eliott will make, as questions grouped by theme;
+  - **his library:** a shortlist of his own functions, decoys included;
+  - **cost,** as a question;
+  - **traps, as questions;**
+  - a **test plan,** inputs grouped from normal to undefined;
+  - the questions an evaluator may ask.
+- **The noise rule.** The body keeps what changes what Eliott does on the
+  cluster. How a fact was established (compiler versions, dates, runs),
+  and details that change nothing for him, go to the notes for the
+  review.
+- **Size:** one step per composition turn.
 
 **Both atlas files** end with **Notes for the review (author)**, before
 the Review block: the anchors opened in the session and those cited from
 knowledge; what was run, with the machine, the versions and the date;
-the reference results the atlas asks Eliott to derive himself, kept out
-of his reading path; the integrity points the reviewer should check.
+what the noise rule moved out of the body; the integrity points the
+reviewer should check, the twins first.
 
 ## 3. The three locks and claim typing
 
@@ -97,6 +124,9 @@ of his reading path; the integrity points the reviewer should check.
   - Compile every example with `cc -Wall -Wextra -Werror`, adding
     `-g -fsanitize=address` when memory is involved.
   - Run it and paste the real output.
+  - Every variant the text asks the reader to make ("Try", "add this
+    line", "remove this") is compiled and run exactly as worded, and its
+    result is the one the text states.
   - Mark each block `tested (<compiler>, <YYYY-MM-DD>)` only if it
     actually ran in this conversation; otherwise `not tested`.
   - The cluster's `cc` is clang; if the behaviour depends on the
@@ -104,14 +134,46 @@ of his reading path; the integrity points the reviewer should check.
 - **Anchor.**
   - Man pages as `man 3 memmove`.
   - The standard as C11 (the N1570 draft), for example "N1570 §7.24.2.2".
+    A `[standard]` claim cites a normative paragraph. Footnotes, notes
+    and EXAMPLEs are informative (N1570 Foreword p8): they may stand
+    beside a normative paragraph, never alone.
   - Also the Norm, the subject, 42 documents.
-- **Review:** by the Examinateur only (§1, step 5).
+- **Review:** by the Examinateur only (§1, step 5), in one trip.
   - The reviewer opens every anchor for real: `man` in the workspace
     (installed per `tools.md` §1), otherwise man7.org; N1570 from the
     Project's `n1570.pdf`, whose `project_read` writes its full text to
     the workspace (the web copies stop early or refuse).
   - An anchor it could not open is marked `anchor unchecked`. That
     blocks `approved`.
+  - **The edit scope.** The Examinateur corrects the source itself when
+    the fix corrects what is already there:
+    - a wording, a claim type, an anchor, an overstatement, a missing
+      caveat or condition;
+    - a stated output, re-run;
+    - an existing code block or variant that does not do what the text
+      says: the smallest edit that makes it so, re-run;
+    - a sentence moved or split for clarity.
+
+    Every edit is verified in the session: each anchor it names opened,
+    each output it states run.
+  - **Outside the scope,** the verdict is `changes needed`, and the
+    source goes back to the Professeur:
+    - a new section, example, twin, figure or check-yourself question;
+    - an explanation or a model that must be rethought, not corrected;
+    - a calibration that misses the baseline;
+    - any integrity finding: what replaces an example too close to a
+      deliverable is the Professeur's design, never the reviewer's.
+  - **The write.** The Examinateur shows Eliott the verdict and the list
+    of edits. With his go, it applies them (each current text found once,
+    outside the Review block), re-runs what they touch, and writes the
+    source once:
+    - status `approved (Examinateur, <date>; <n> edits by the
+      Examinateur)`;
+    - the Review block lists every edit, with its current and new text,
+      and records the source's size before the edits.
+  - **The second eye.** The Professeur's render session checks every
+    listed edit before it renders (§5). Every change is seen by a role
+    that did not make it.
 - **Claim types,** put in brackets after the claim: `[standard]`,
   `[implementation]`, `[UB]`, `[42 rule]`, `[advice]`.
 
@@ -141,7 +203,18 @@ of his reading path; the integrity points the reviewer should check.
   - when Eliott's own validated work already holds such a file (a
     Reloaded Makefile), the atlas sends him there;
   - no pseudocode of the deliverable;
-  - an atlas never goes beyond N1.
+  - **an atlas stays below N2.** It gives the contract and everything
+    around it (§2), never the steps:
+    - no code and no pseudocode of a deliverable function;
+    - no answer to its decision questions;
+    - no decision questions in the order the code runs, nor one per line
+      of the function;
+    - a shortlist never says which of its candidates fit;
+  - **an atlas twin** works on another task, with another contract. It is
+    not a twin if renaming, retyping, or changing its stop condition, its
+    return value or a single line gives a deliverable function. The
+    review checks each step as a whole: its twin, its examples and its
+    decision questions together never add up to a function.
 
 ## 5. Delivery: page and file
 
@@ -154,6 +227,11 @@ source's "Page" line.
   conversation, read the page first.
 - The **final page is rendered from the approved source.** An earlier
   page carries a visible DRAFT banner.
+- **Before rendering,** the Professeur checks the Examinateur's edits
+  (§3): each one in place as the Review block writes it, and nothing else
+  changed (applied in reverse, the edits give back the source's size
+  before them). An edit it disagrees with goes to Eliott, and the render
+  waits for his call.
 - **The render check** comes before the "Page" line is filled, and its
   result is reported to Eliott:
   1. the local file: its text, drawings and controls aside, equals the
@@ -173,4 +251,4 @@ the cluster for now, the KB's `outputs/` later.
 **Storage.** Only the markdown source goes into Project Knowledge. The
 HTML never does.
 
-— p6-course-production.md v1.0 · seal: gusset-30 —
+— p6-course-production.md v1.0 · seal: purlin-47 —

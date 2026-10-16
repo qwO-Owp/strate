@@ -28,7 +28,10 @@ Nothing is written without your OK.
 ```
 [mother] <what you want to change, or "triage de l'inbox">
 ```
-Check: the status block (version, inbox, open items).
+Check: the status block (version, inbox, open items). A session that
+changes `system/` ends with a release bundle, `strate-<version>.tar.gz`,
+and the commands to commit it: no `[nav]` needed unless something goes
+wrong.
 
 ## Éclaireur — Opus 5.5, high, web on
 
@@ -60,6 +63,13 @@ Attach the subject PDF if it is not in Project Knowledge yet.
 [prof:<projet>-atlas] <partie, if only one part>
 ```
 
+**A render, after approval:** `Prof — <concept> render` · Sonnet 5, high
+```
+[prof:<concept>] render
+```
+It checks the Examinateur's edits first, then publishes the page and
+sends the HTML file.
+
 **A quick question:** `Prof — learn` · Sonnet 5, medium
 ```
 [learn] <ta question>
@@ -81,10 +91,12 @@ and that the handoff of the previous step is in the "Lu" line.
 ```
 Plan 20 minutes. Answer in your own words; no help during it.
 
-**Review of courses and atlases:** `Exam — review`
+**Review of courses and atlases:** `Exam — review` · Opus 5.5, max
 ```
 [eval:courses] <which files>
 ```
+One trip: it corrects within its scope and, with your go, settles the
+file as `approved`, or sends it back to the Professeur.
 
 **Checklist and defense:** `Exam — <projet>`
 ```

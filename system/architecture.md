@@ -7,8 +7,10 @@ until the Mother changes it.
 
 - **Status:** v1.0, C1 approved by Eliott on 2026-09-30; amended in C2a
   (pre-release) after an independent review of the role docs, in C3c
-  (2026-10-02) once the core went live, and in E (2026-10-06) after the
-  first public commit. It freezes the structure. C2 writes the detailed
+  (2026-10-02) once the core went live, in E (2026-10-06) after the
+  first public commit, and in 1.0-rc.3 (2026-10-15): atlas v2, the
+  one-trip review, releases without the Navigateur. It freezes the
+  structure. C2 writes the detailed
   roles, protocols and templates; C3 composes the core instructions.
 - **Sources:** decisions_log (sessions 1–3), open_questions (B5), Eliott's
   answers to the C1 questions (2026-09-29/30), the KB's own architecture
@@ -50,7 +52,9 @@ the KB). When a design choice is unclear, decide with them.
 6. **Calibrated to Eliott, not to an average student.** Every role reads
    the baseline before explaining anything.
 7. **Production and verification are separated.** The role that writes a
-   course or a piece of code never grades it.
+   course or a piece of code never grades it. A reviewer may correct what
+   it verifies, within a stated scope, but every change is seen by a role
+   that did not make it (P6 §3).
 8. **Just in time, but always from the base.** Content is produced in the
    order projects need it. Each piece starts from the concepts beneath it
    and never skips a layer.
@@ -368,18 +372,21 @@ The next conversation starts from it.
    - every technical fact anchored (man page, C standard, Norm, 42
      doc). The reviewer opens each anchor for real; one it cannot open
      is `anchor unchecked`, which blocks approval;
-   - review by the Examinateur (several courses can be reviewed in one
-     `[eval:courses]` conversation).
+   - review by the Examinateur, in one trip: it corrects within its
+     edit scope and settles the source, or sends it back (several
+     courses can be reviewed in one `[eval:courses]` conversation).
 5. **Claim typing** on every statement (courses are in English):
    `standard` · `implementation` · `UB` · `42 rule` · `advice`.
 6. **Status:** `draft` → `in review` → `approved`. Only the Examinateur
-   sets `approved`. Its only edits are the status line and a Review block
-   at the end of the source.
+   sets `approved`. Beyond the status line and a Review block at the end
+   of the source, it makes only corrections within its edit scope, each
+   listed in that block; the Professeur checks them before the render.
 7. **Integrity:**
    - no example, twin, check-yourself answer or diagnostic correction
      reproduces a file that a graded project not yet validated must turn
      in: a function, its Makefile or its header;
-   - an atlas stays at N1, its pitfalls written as questions.
+   - an atlas stays below N2: the contract and everything around it,
+     never the steps; its pitfalls written as questions.
 8. **Delivery:**
    - the final HTML is rendered from the approved source and checked
      against it before its link is recorded (P6 §5); an early render
@@ -428,10 +435,14 @@ Known: unlimited attempts; 100% is needed to move to the next milestone.
 - **Atlases by project**, split when the project is large (Libft: a general
   atlas plus one per part of the subject). An atlas is a complete roadmap
   with no solution; it must let Eliott start alone. It numbers its steps
-  `P<part>.<n>`, each sized for one tutoring conversation.
+  `P<part>.<n>`, each sized for one tutoring conversation. **Atlas v2**
+  (1.0-rc.3) bridges the courses and each function: the contract in
+  plain words, a mechanism map, a twin walked line by line, examples, and
+  the decisions as questions (P6 §2).
 - **The skeleton ladder:**
   - **N1, the contract** (prototype, inputs, outputs, edge cases, the man
-    page): in the atlas, for every function.
+    page): in the atlas, for every function, with everything around it
+    that stays below N2.
   - **N2, the steps in words:** the Tuteur gives it after an attempt. For
     a short function, N2 points at the wrong or missing step in *his*
     steps instead of listing them all.
@@ -662,10 +673,11 @@ else (P9 §3).
   Then **K**, every open conversation closed with its report, and **E**,
   the decisions of 2026-10-05 applied and the inbox emptied
   (`1.0-rc.2`).
-- **C5**, the external audit (Fable 5.1 MAX, with a pre-mortem), is split
-  so that it audits real material: **V1**, light, after Libft's Part 1;
-  **V2**, the full audit, after Libft's close.
+- **C5**, the external audit (Fable 5.1 MAX, with a pre-mortem), runs
+  after Libft's close (V2). The light V1 was dropped on 2026-10-15:
+  Part 1 left no tutoring handoffs to audit, and its Mother queue ran in
+  1.0-rc.3.
 - **D2** follows C5: its fixes make 1.0, with the MIT license and TBD-8.
 - The dated route lives in `living/roadmap.md`.
 
-— architecture.md v1.0 · seal: corbel-62 —
+— architecture.md v1.0 · seal: lintel-38 —

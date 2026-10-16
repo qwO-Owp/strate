@@ -47,7 +47,9 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
 - **Numbering:**
   - 0.x: bootstrap;
   - **1.0-rc: in force since 2026-10-02**, the first pasted core;
-  - `1.0-rc.N`: fixes released before 1.0 (`1.0-rc.2`, 2026-10-06);
+  - `1.0-rc.N`: fixes released before 1.0 (`1.0-rc.2`, 2026-10-06;
+    `1.0-rc.3`, 2026-10-15). Every Mother session that writes a
+    `system/` doc ends with its own release;
   - 1.0: once the C5 audit's fixes are in; D2 commits it;
   - minor versions (1.1, 1.2): calibrations (wording, a role, a new
     living document);
@@ -62,17 +64,30 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
      sealed docs there are in total, so he can check his own list is
      complete;
   4. `decisions_log` is updated;
-  5. the public repo (since D1), in this order:
-     1. the Mère builds the bundle from whole reads, the core as its
-        public projection (architecture §10), and checks it: every seal
-        line is its file's last line; the file list equals the
-        `.gitignore` whitelist; a `diff` of the two cores shows one hunk,
-        "Who Eliott is";
-     2. the Navigateur runs the private-term check (the list lives in
-        `living/environment.md` §2) and compares `git status` and
-        `git ls-files` with the whitelist, before the commit;
-     3. Eliott commits and pushes, then looks at the result on GitHub;
-     4. `CHANGELOG.md` gets an entry with nothing private in it.
+  5. the public repo (since D1; without the Navigateur since 1.0-rc.3),
+     in this order:
+     1. the Mère builds the bundle in the workspace: the published repo,
+        cloned anonymously; every changed file, from a whole read; the
+        core as its public projection (architecture §10); a
+        `CHANGELOG.md` entry with nothing private in it;
+     2. the Mère checks the bundle there:
+        - every seal line is its file's last line;
+        - the file list equals the `.gitignore` whitelist;
+        - a `diff` of the two cores shows one hunk, "Who Eliott is";
+        - the private-term list of `living/environment.md` §2 finds
+          nothing: short terms as whole words, case-sensitive; the
+          others case-insensitive;
+        - no e-mail address appears;
+        - against the published tree, the changes are exactly the ones
+          announced;
+     3. she sends Eliott `strate-<version>.tar.gz`, the commands, and the
+        `git status` he must see. He replaces the tracked files with the
+        bundle, compares the status, commits and pushes;
+     4. the Mère clones the published repo again and compares it with
+        the bundle. The release is done when they are identical.
+
+     The Navigateur takes over only when something goes wrong: a
+     rejected push, a conflict, a status that differs.
 - **A release that touches no sealed doc costs him no list update.** The
   core carries no seal, so a core-only release is free in that sense —
   worth knowing when deciding whether a step can be split and the
@@ -95,4 +110,4 @@ Strate protocol doc. When you follow it, quote its seal (last line) in the
   queued the fix. A handoff line can under- or over-state a fault; the
   protocol itself cannot (C3c, the P7 case).
 
-— p9-change-control.md v1.0 · seal: soffit-17 —
+— p9-change-control.md v1.0 · seal: mullion-32 —

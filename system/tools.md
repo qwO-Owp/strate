@@ -26,22 +26,45 @@ Compilers warn differently, and the cluster's `cc` is clang. Something
 that compiles cleanly elsewhere may fail there, so compile on the cluster
 before any turn-in.
 
-**Man pages in the workspace** (about a minute; tested 2026-10-06). The
-image drops them; lift the exclusion, install, and read with `man.REAL`,
-since the image's `man` is a wrapper that refuses. `apt-get update` may
-report an error for an unrelated repository; the install works anyway.
+**Man pages and manuals in the workspace** (a few minutes; tested
+2026-10-15). The image drops them; lift the exclusion, install, and read
+with `man.REAL`, since the image's `man` is a wrapper that refuses.
+`apt-get update` may report an error for an unrelated repository; the
+install works anyway.
 
 ```
 mv /etc/dpkg/dpkg.cfg.d/excludes /etc/dpkg/dpkg.cfg.d/excludes.off
 apt-get update
 apt-get install -y man-db manpages manpages-dev manpages-posix-dev \
   libbsd-dev make-doc libclang-rt-18-dev
-man.REAL 3 memmove
+apt-get install -y --reinstall bash binutils-common coreutils
+apt-get install -y gcc-13-doc cpp-13-doc
+MANPAGER=cat man.REAL 3 memmove
+zcat /usr/share/info/gcc-13.info.gz | less
 ```
+
+- The `--reinstall` line brings back the pages of packages installed
+  before the exclusion was lifted: bash(1), readelf(1), cat(1), od(1),
+  timeout(1).
+- The gcc and cpp manuals (*Warning Options*, *Integers implementation*,
+  the predefined macros) are read from `/usr/share/info/gcc-13.info.gz`
+  and `cpp-13.info.gz`.
 
 `libclang-rt-18-dev` is also what lets clang link an
 `-fsanitize=address` build there. Versions follow the image (gcc 13,
-clang 18 on 2026-10-06).
+clang 18 on 2026-10-15).
+
+**The cluster's clang, approximated.** The cluster's `cc` is clang
+12.0.1; the workspace's is clang 18, and the two do not warn alike. For a
+claim of the form "the compiler warns or refuses", also run libclang
+12.0.0's diagnostics:
+- `pip install --break-system-packages libclang==12.0.0`;
+- parse the file with `clang.cindex`, with the arguments `-Wall -Wextra
+  -Werror -isystem /usr/lib/llvm-18/lib/clang/18/include`, and print
+  `tu.diagnostics`;
+- it compiles and runs nothing. Label the result "libclang 12.0.0", not
+  the cluster's 12.0.1. A filter on its output must keep lines that
+  contain "version": "conversion" contains it.
 
 ## 2. The toolbox, in order of introduction
 
@@ -126,4 +149,4 @@ clang 18 on 2026-10-06).
 - **The cluster decides.** The norminette version and the compiler of the
   cluster are what evaluators see.
 
-— tools.md v1.0 · seal: quoin-71 —
+— tools.md v1.0 · seal: spandrel-13 —
